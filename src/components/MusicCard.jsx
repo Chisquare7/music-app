@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import MusicPlayer from "./MusicPlayer";
 
-const MusicCard = ({ song, onplay }) => {
+const MusicCard = ({ song }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
     <div className="bg-gray-900 p-4 rounded-lg shadow-md text-white">
       <img
@@ -12,10 +15,12 @@ const MusicCard = ({ song, onplay }) => {
       <p className="text-sm">{song.artistName}</p>
       <button
         className="mt-2 bg-blue-500 text-white px-3 py-1 rounded cursor-pointer"
-        onClick={() => onplay(song)}
+        onClick={() => setIsPlaying(!isPlaying)}
       >
-        ▶ Play
+        {isPlaying ? "Hide Player" : "Play Song"}
       </button>
+
+      {isPlaying && <MusicPlayer song={song} />}
     </div>
   );
 };

@@ -16,7 +16,7 @@ const MusicPlayer = ({ song }) => {
     <div className="flex items-center bg-gray-800 text-white p-4 rounded-md">
       <img
         src={song.songImage}
-        alt={songTitle}
+        alt={song.songTitle}
         className="w-16 h-16 rounded-md mr-4"
       />
       <div>
