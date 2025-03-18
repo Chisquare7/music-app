@@ -23,7 +23,7 @@ const MusicPlayer = ({ song }) => {
         <h3 className="text-lg font-semibold">{song.songTitle}</h3>
         <p className="text-gray-400">{song.artistName}</p>
         <button
-          className="mt-2 px-4 py-2 bg-blue-500 rounded-md"
+          className="mt-2 px-4 py-2 bg-blue-500 rounded-md cursor-pointer"
           onClick={togglePlay}
         >
           {isPlaying ? "Pause" : "Play"}
