@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MusicCard from "../components/MusicCard";
+import fetchMusicSongs from "../api/musicApi";
 
 const Home = () => {
   const [songs, setSongs] = useState([]);
@@ -7,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     const getSongs = async () => {
       const data = await fetchMusicSongs();
-      getSongs(data);
+      setSongs(data);
     };
 
     getSongs();
